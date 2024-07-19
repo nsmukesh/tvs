@@ -8,7 +8,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 
-include "functions.php";
+include "functions.html";
 $user = @$_REQUEST['user'];
 
 function handleLogin()
@@ -22,10 +22,10 @@ function handleLogin()
     if ($otp_data["status"] == "error") {
       $users = $otp_data["user"];
       $msg = $otp_data["message"];
-      header("Location: otpVerify.php?OtpError&user=" . $users . "&msg=" . urlencode($msg));
+      header("Location: otpVerify.html?OtpError&user=" . $users . "&msg=" . urlencode($msg));
       exit();
     } else {
-      header("Location: otpVerify.php?success");
+      header("Location: otpVerify.html?success");
     }
   }
 
@@ -83,7 +83,7 @@ function renderLoginForm($user)
         showAlert(alertEl, "Success!", "You have been logged in", "success", "#4CAF50");
         const currentProtocol = window.location.protocol;
         const currentHost = window.location.host;
-        const currentPathname = window.location.pathname.replace("app/login/otpVerify.php", "index.php");
+        const currentPathname = window.location.pathname.replace("app/login/otpVerify.html", "index.html");
         setTimeout(function() {
           const newURL = currentProtocol + "//" + currentHost + currentPathname;
           window.location.replace(newURL);
