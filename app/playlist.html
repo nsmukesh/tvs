@@ -100,7 +100,7 @@ $jio_data = '#EXTM3U x-tvg-url="https://avkb.short.gy/jioepg.xml.gz"' . PHP_EOL;
 $jio_data .= $sony_data . PHP_EOL;
 foreach ($json as $channel) {
     $jio_data .= '#EXTINF:-1 tvg-id="' . $channel['channel_id'] . '" tvg-name="' . $channel['channel_name'] . '" tvg-type="' . $channel['channelCategoryId'] . '" group-title="TS-JioTV ' . $channel['channelCategoryId'] . '" tvg-language="' . $channel['channelLanguageId'] . '" tvg-logo="' . $channel['logoUrl'] . '",' . $channel['channel_name'] . PHP_EOL;
-    $jio_data .= $jio_path . 'live.php?id=' . $channel['channel_id'] . '&e=.m3u8' . PHP_EOL;
+    $jio_data .= $jio_path . 'live.html?id=' . $channel['channel_id'] . '&e=.m3u8' . PHP_EOL;
     $jio_data .= "" . PHP_EOL;
 }
 print($jio_data);
