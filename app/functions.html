@@ -23,7 +23,7 @@ function refresh_token()
   $filePath = $DATA_FOLDER . "/creds.jtv";
   // Check if the file exists and if it's older than 7000 seconds
   if (file_exists($filePath) && (time() - filemtime($filePath) > 7000)) {
-    return cUrlGetData($jio_path . "/login/refreshLogin.php");
+    return cUrlGetData($jio_path . "/login/refreshLogin.html");
   }
 }
 
