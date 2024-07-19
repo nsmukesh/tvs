@@ -5,7 +5,7 @@
 // Created By: TechieSneh
 
 error_reporting(0);
-include "functions.php";
+include "functions.html";
 header("Content-Type: application/vnd.apple.mpegurl");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Expose-Headers: Content-Length,Content-Range");
@@ -97,18 +97,18 @@ if ($haystack->code !== 200) {
             'URI="',
             "$chs[4]-video",
             "$chs[4]-audio",
-            'URI="stream.php?cid=' . $id . '&id=stream.php?cid=' . $id . '&id=',
-            'stream.php?cid=' . $id . '&id=keyframes/stream.php?cid=' . $id . '&id=',
-            'stream.php?cid=',
+            'URI="stream.html?cid=' . $id . '&id=stream.html?cid=' . $id . '&id=',
+            'stream.html?cid=' . $id . '&id=keyframes/stream.html?cid=' . $id . '&id=',
+            'stream.html?cid=',
         ];
 
         $replace = [
-            'URI="stream.php?cid=' . $id . '&id=',
-            "stream.php?cid=$id&id=$chs[4]-video",
-            "stream.php?cid=$id&id=$chs[4]-audio",
-            'URI="stream.php?cid=' . $id . '&id=',
-            'stream.php?cid=' . $id . '&id=keyframes/',
-            "stream.php?ck=$cook&cid=",
+            'URI="stream.html?cid=' . $id . '&id=',
+            "stream.html?cid=$id&id=$chs[4]-video",
+            "stream.html?cid=$id&id=$chs[4]-audio",
+            'URI="stream.html?cid=' . $id . '&id=',
+            'stream.html?cid=' . $id . '&id=keyframes/',
+            "stream.html?ck=$cook&cid=",
         ];
 
         $hs = str_replace($search, $replace, $hs);
