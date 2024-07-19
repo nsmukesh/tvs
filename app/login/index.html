@@ -8,7 +8,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 
-include "functions.php";
+include "functions.html";
 
 function handleLogin()
 {
@@ -19,10 +19,10 @@ function handleLogin()
 
     if ($otp_data["status"] == "error") {
       $msg = $otp_data["message"];
-      header("Location: index.php?OtpError&msg=" . urlencode($msg));
+      header("Location: index.html?OtpError&msg=" . urlencode($msg));
       exit();
     } else {
-      header("Location: otpVerify.php?user=" . $user);
+      header("Location: otpVerify.html?user=" . $user);
       exit();
     }
   }
@@ -81,7 +81,7 @@ function renderLoginForm($msg)
         showAlert(alertEl, "Success!", "You have been logged in", "success", "#4CAF50");
         const currentProtocol = window.location.protocol;
         const currentHost = window.location.host;
-        const currentPathname = window.location.pathname.replace("app/login/index.php", "index.php");
+        const currentPathname = window.location.pathname.replace("app/login/index.html", "index.html");
         setTimeout(function() {
           const newURL = currentProtocol + "//" + currentHost + currentPathname;
           window.location.replace(newURL);
