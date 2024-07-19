@@ -201,7 +201,7 @@ $jio_path = substr($jio_path, 0, -1);
     $cp_link_live = base64_encode($cp_link_live);
     echo <<<GFG
     <h2 id="jtvh1"> $name </h2>
-    <a href="$jio_path/play.php?data=$cp_link_live" class="btn btn-danger">LIVE</a>
+    <a href="$jio_path/play.html?data=$cp_link_live" class="btn btn-danger">LIVE</a>
     GFG;
     ?>
     <hr width="50%" color="red">
@@ -223,7 +223,7 @@ $jio_path = substr($jio_path, 0, -1);
       echo <<<GFG
       <div class="card">
         <img class="card-img-top" src="$image" alt="logo" width="20px">
-        <a href="$jio_path/catchup/cp.php?data=$cp_link" class="btn btn-primary">{$prevDate->format('d-m-Y')}</a>
+        <a href="$jio_path/catchup/cp.html?data=$cp_link" class="btn btn-primary">{$prevDate->format('d-m-Y')}</a>
       </div>
       GFG;
     }
