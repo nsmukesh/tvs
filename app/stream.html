@@ -5,7 +5,7 @@
 // Created By: TechieSneh
 
 error_reporting(0);
-include "functions.php";
+include "functions.html";
 
 header("Content-Type: application/vnd.apple.mpegurl");
 header("Access-Control-Allow-Origin: *");
@@ -32,13 +32,13 @@ if (@$_REQUEST["cid"] != "" && @$_REQUEST["ck"] != "") {
     $search = [
         ',URI="https://tv.media.jio.com/fallback/bpk-tv/',
         "{$chs[0]}-",
-        "auth.php?ck=$cooks&ts=keyframes/auth.php?ckk=$cooks&ts=",
+        "auth.html?ck=$cooks&ts=keyframes/auth.html?ckk=$cooks&ts=",
     ];
 
     $replace = [
-        ',URI="auth.php?ck=' . $cooks . '&pkey=',
-        "auth.php?ck=$cooks&ts=bpk-tv/{$chs[0]}/Fallback/{$chs[0]}-",
-        "auth.php?ck=$cooks&ts=keyframes/",
+        ',URI="auth.html?ck=' . $cooks . '&pkey=',
+        "auth.html?ck=$cooks&ts=bpk-tv/{$chs[0]}/Fallback/{$chs[0]}-",
+        "auth.html?ck=$cooks&ts=keyframes/",
     ];
 
     $hs = str_replace($search, $replace, $hs);
