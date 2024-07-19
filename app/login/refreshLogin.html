@@ -8,12 +8,12 @@ error_reporting(0);
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 $DATA_FOLDER = "../assets/data";
-include "functions.php";
+include "functions.html";
 $new_auth = refresh_jio_token();
 
 if ($new_auth["status"] == "error") {
   $msg = $new_auth["message"];
-  header("Location: index.php?OtpError&msg=" . urlencode($msg));
+  header("Location: index.html?OtpError&msg=" . urlencode($msg));
   exit();
 } else {
 
@@ -23,6 +23,6 @@ if ($new_auth["status"] == "error") {
   $new_auth = json_encode($old_data);
   $key_data = file_get_contents($DATA_FOLDER . "/credskey.jtv");
   file_put_contents($DATA_FOLDER . "/creds.jtv", encrypt_data($new_auth, $key_data));
-  header("Location: index.php?success");
+  header("Location: index.html?success");
   exit();
 }
